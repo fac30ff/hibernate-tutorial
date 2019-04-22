@@ -26,7 +26,7 @@ public class DeleteStudentDemo {
 			//retrieve student based on the id: primary key
 			System.out.println("\nGetting stuent with id: " + studentId);
 			Student myStudent = session.get(Student.class, studentId);
-			System.out.println("Updating student... ");
+			System.out.println("Deleting student " + myStudent);
 			session.delete(myStudent);
 			//commit the transaction
 			session.getTransaction().commit();
