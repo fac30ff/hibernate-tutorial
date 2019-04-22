@@ -30,10 +30,11 @@ public class DeleteStudentDemo {
 			session.delete(myStudent);
 			//commit the transaction
 			session.getTransaction().commit();
-			//delete on the fly
+			//delete on the fly, another approach
 			session = factory.getCurrentSession();
 			session.beginTransaction();
 			//query for deleting student with id
+			System.out.println("Deleting student with id = 1111111111");
 			session.createQuery("delete from Student where id=1111111111").executeUpdate();
 			System.out.println("Done!");
 		} finally {
